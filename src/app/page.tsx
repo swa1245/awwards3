@@ -3,9 +3,11 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
-import { FaStar } from "react-icons/fa";
-import { FaArrowAltCircleRight, FaArrowUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import * as framerMotion from "framer-motion";
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import ServicesSection from "../components/ServicesSection";
 
 // Create motion components
 const Motion = framerMotion.motion;
@@ -270,199 +272,19 @@ const page = (props: Props) => {
   return (
     <div className="main-container">
       <section ref={section1Ref} id="home" className="section1 min-h-screen w-full relative bg-amber-50">
-        <nav className="flex items-center justify-between px-10 py-8">
-          <h1 className="text-5xl font-bold flex gap-4 gsap">
-            {" "}
-            <div className="star-rotate">
-              <FaStar className="-rotate-45" />
-            </div> WizardZ
-          </h1>
-          <div className="part2 flex items-center justify-center gap-20">
-            <h4 className="text-lg font-serif gsap cursor-pointer" onClick={() => scrollToSection(section1Ref)}>Home</h4>
-            <h4 className="text-lg font-serif gsap cursor-pointer" onClick={() => scrollToSection(section2Ref)}>Services</h4>
-            <h4 className="text-lg font-serif gsap cursor-pointer">Use Cases</h4>
-            <h4 className="text-lg font-serif gsap cursor-pointer">Blog</h4>
-            <button className="px-3 py-2 font-mono cursor-pointer gsap bg-white rounded-md border-1 border-b-gray-950 hover-effect">
-              Request a quote
-            </button>
-          </div>
-        </nav>
-        <div className="center px-10 py-8  h-[80vh] flex w-full">
-          <div className="centerpart1  h-[100%] w-[44%]">
-            <h1
-              ref={tilref}
-              className="text-[5vw] gs font-semibold leading-none capitalize  "
-            >
-              Navigating the digital landscape for sucess
-            </h1>
-            <p className="text-2xl mt-12 mb-8 gs font-medium w-[95%] text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Inventore tempora doloremque ipsum, dicta esse ratione id vel
-              corrupti veniam ducimus?
-            </p>
-            <button className="bg-black cursor-pointer g text-white border-2 py-5 px-10 text-2xl font-semibold hover-effect">
-              Book a consultation
-            </button>
-          </div>
-          <div className="centerpart2 relative h-[100%] w-[56%]">
-            <img
-              src="https://neodrafts.com/_astro/hero12.Wth7asPL_ZjRIO9.svg"
-              className="h-[100%] absolute right-0 hero-image"
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="section1bottom flex items-center justify-between py-8 px-20">
-          <img
-            className="h-14"
-            src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png"
-            alt=""
-          />
-          <img
-            className="h-14"
-            src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png"
-            alt=""
-          />
-          <img
-            className="h-14"
-            src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png"
-            alt=""
-          />
-          <img
-            className="h-14"
-            src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png"
-            alt=""
-          />
-          <img
-            className="h-14"
-            src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png"
-            alt=""
-          />
-          <img
-            className="h-14"
-            src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png"
-            alt=""
-          />
-        </div>
+        <Navbar 
+          scrollToSection={scrollToSection} 
+          section1Ref={section1Ref} 
+          section2Ref={section2Ref} 
+        />
+        <HeroSection tilref={tilref} />
       </section>
-      <section 
-        ref={section2Ref}
-        id="services"
-        className="selectio2 bg-amber-50 fade-in-section">
-        <div className="services  px-24 py-14  pt-32 flex gap-10 items-center justify-start">
-          <h3 className="bg-[#B9FF66] font-semibold text-3xl px-2 tracking-wider py-1 rounded-md">
-            Services
-          </h3>
-          <p className="text-xl font-mono w-[75%] text-gray-700">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
-            unde dolorum excepturi, facilis pariatur sapiente minima quam
-            ratione, fuga mollitia error veritatis impedit officiis molestias
-            autem nostrum tempora placeat voluptates.
-          </p>
-        </div>
-        <div className="conatiner h-[86%] w-full py-12 px-32 flex justify-between gap-10 flex-wrap">
-          <div
-            ref={(el) => { if (el && !elemRefs.current.includes(el)) elemRefs.current.push(el); }}
-            className="elem flex items-center justify-between p-10 h-96 w-[45%] border-2 rounded-4xl shrink-0 service-card"
-            style={{
-              boxShadow: "0 15px 0 black",
-            }}
-          >
-            <div className="elemp1 flex flex-col justify-between w-[40%] gap-40">
-              <h2 className="bg-[#B9FF66] py-2 px-2 pl-4  text-2xl rounded-md font-semibold">
-                Sarch engine optimzation
-              </h2>
-              <h4 className="flex items-center gap-4 text-xl font-mono learn-more-link">
-                <div className="arrow-icon">
-                  <FaArrowAltCircleRight className="-rotate-45 text-3xl" />
-                </div>
-                Learn more
-              </h4>
-            </div>
-            <div className="elemp2 w-[60%]  ml-56">
-              <img
-                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-                alt=""
-              />
-            </div>
-          </div>
-          <div
-            ref={(el) => { if (el && !elemRefs.current.includes(el)) elemRefs.current.push(el); }}
-            className="elem flex items-center justify-between p-10 h-96 w-[45%] border-2 rounded-4xl shrink-0 service-card"
-            style={{
-              boxShadow: "0 15px 0 black",
-            }}
-          >
-            <div className="elemp1 flex flex-col justify-between w-[40%] gap-40">
-              <h2 className="bg-[#B9FF66] py-2 px-2 pl-4  text-2xl rounded-md font-semibold">
-                Sarch engine optimzation
-              </h2>
-              <h4 className="flex items-center gap-4 text-xl font-mono learn-more-link">
-                <div className="arrow-icon">
-                  <FaArrowAltCircleRight className="-rotate-45 text-3xl" />
-                </div>
-                Learn more
-              </h4>
-            </div>
-            <div className="elemp2 w-[60%]  ml-56">
-              <img
-                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-                alt=""
-              />
-            </div>
-          </div>
-          <div
-            ref={(el) => { if (el && !elemRefs.current.includes(el)) elemRefs.current.push(el); }}
-            className="elem flex items-center justify-between p-10 h-96 w-[45%] border-2 rounded-4xl shrink-0 service-card"
-            style={{
-              boxShadow: "0 15px 0 black",
-            }}
-          >
-            <div className="elemp1 flex flex-col justify-between w-[40%] gap-40">
-              <h2 className="bg-[#B9FF66] py-2 px-2 pl-4  text-2xl rounded-md font-semibold">
-                Sarch engine optimzation
-              </h2>
-              <h4 className="flex items-center gap-4 text-xl font-mono learn-more-link">
-                <div className="arrow-icon">
-                  <FaArrowAltCircleRight className="-rotate-45 text-3xl" />
-                </div>
-                Learn more
-              </h4>
-            </div>
-            <div className="elemp2 w-[60%]  ml-56">
-              <img
-                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-                alt=""
-              />
-            </div>
-          </div>
-          <div
-            ref={(el) => { if (el && !elemRefs.current.includes(el)) elemRefs.current.push(el); }}
-            className="elem flex items-center justify-between p-10 h-96 w-[45%] border-2 rounded-4xl shrink-0 service-card"
-            style={{
-              boxShadow: "0 15px 0 black",
-            }}
-          >
-            <div className="elemp1 flex flex-col justify-between w-[40%] gap-40">
-              <h2 className="bg-[#B9FF66] py-2 px-2 pl-4  text-2xl rounded-md font-semibold">
-                Sarch engine optimzation
-              </h2>
-              <h4 className="flex items-center gap-4 text-xl font-mono learn-more-link">
-                <div className="arrow-icon">
-                  <FaArrowAltCircleRight className="-rotate-45 text-3xl" />
-                </div>
-                Learn more
-              </h4>
-            </div>
-            <div className="elemp2 w-[60%]  ml-56">
-              <img
-                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      
+      <ServicesSection 
+        section2Ref={section2Ref}
+        elemRefs={elemRefs}
+      />
+
       {/* Scroll to top button */}
       <div 
         className={`scroll-to-top ${showScrollTop ? 'visible' : ''}`}
