@@ -2,6 +2,7 @@
 "use client";
 import React from 'react';
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface HeroSectionProps {
   tilref: React.RefObject<HTMLHeadingElement | null>;
@@ -28,11 +29,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ tilref }) => {
           </button>
         </div>
         <div className="centerpart2 relative h-[100%] w-[56%]">
-          <img
-            src="https://neodrafts.com/_astro/hero12.Wth7asPL_ZjRIO9.svg"
-            className="h-[100%] absolute right-0 hero-image"
-            alt="Hero illustration"
-          />
+          <div className="relative h-full w-full">
+            <Image
+              src="https://neodrafts.com/_astro/hero12.Wth7asPL_ZjRIO9.svg"
+              className="absolute right-0 hero-image"
+              alt="Hero illustration"
+              fill
+              style={{ objectFit: 'contain', objectPosition: 'right' }}
+              priority
+            />
+          </div>
         </div>
       </div>
       <div className="section1bottom overflow-hidden py-8 px-0 relative">
@@ -62,24 +68,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({ tilref }) => {
             style={{ width: "fit-content" }}
           >
             {/* First set of logos */}
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 1" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 2" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png" alt="Partner logo 3" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 4" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 5" />
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 1" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 2" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png" alt="Partner logo 3" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 4" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 5" /></div>
             
             {/* Duplicate set for seamless looping */}
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 1" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 2" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png" alt="Partner logo 3" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 4" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 5" />
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 1" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 2" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png" alt="Partner logo 3" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 4" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 5" /></div>
             {/* Duplicate set for seamless looping */}
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 1" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 2" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png" alt="Partner logo 3" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 4" />
-            <img className="h-14" src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 5" />
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 1" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 2" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-12.CzbcZjeo.png" alt="Partner logo 3" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-4.Bf33ViW9.png" alt="Partner logo 4" /></div>
+            <div className="h-14 relative w-32 mx-2"><Image width={128} height={56} src="https://neodrafts.com/_astro/Stack@1-2.Dv6tSWqm.png" alt="Partner logo 5" /></div>
           </motion.div>
         </div>
       </div>

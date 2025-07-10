@@ -9,18 +9,15 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import ServicesSection from "../components/ServicesSection";
 
-// Create motion components
-const Motion = framerMotion.motion;
-const { useScroll, useTransform } = framerMotion;
+// Import motion components directly
+const { useScroll } = framerMotion;
 
-type Props = {};
-
-const page = (props: Props) => {
+const Page = () => {
   const tilref = useRef<HTMLHeadingElement>(null);
   const section1Ref = useRef<HTMLElement>(null);
   const section2Ref = useRef<HTMLElement>(null);
   const elemRefs = useRef<HTMLDivElement[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [, setIsLoaded] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   
   // Function to handle smooth scrolling to sections
@@ -31,9 +28,7 @@ const page = (props: Props) => {
   };
   
   // For Framer Motion scroll animations
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
+  useScroll(); // Using for scroll functionality without tracking progress
   
   useEffect(() => {
     // Enable smooth scrolling for the entire page
@@ -296,4 +291,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;

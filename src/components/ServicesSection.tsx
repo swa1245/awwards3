@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import Image from "next/image";
 
 interface ServicesSectionProps {
   section2Ref: React.RefObject<HTMLElement | null>;
@@ -43,10 +44,15 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ section2Ref, elemRefs
             </h4>
           </div>
           <div className="elemp2 w-[60%] ml-56">
-            <img
-              src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-              alt="SEO service"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
+                alt="SEO service"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
         <div
@@ -68,10 +74,15 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ section2Ref, elemRefs
             </h4>
           </div>
           <div className="elemp2 w-[60%] ml-56">
-            <img
-              src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-              alt="Web Development service"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
+                alt="Web Development service"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
         <div
@@ -93,10 +104,15 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ section2Ref, elemRefs
             </h4>
           </div>
           <div className="elemp2 w-[60%] ml-56">
-            <img
-              src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-              alt="Digital Marketing service"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
+                alt="Digital Marketing service"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
         <div
@@ -118,10 +134,15 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ section2Ref, elemRefs
             </h4>
           </div>
           <div className="elemp2 w-[60%] ml-56">
-            <img
-              src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
-              alt="UI/UX Design service"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="https://neodrafts.com/_astro/card-pic1.LmmlwL7__1RuDY6.webp"
+                alt="UI/UX Design service"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </div>
